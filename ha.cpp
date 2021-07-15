@@ -15,6 +15,7 @@ public:
     using const_iterator         =   const ValueT*;
     using size_type              =   size_t;
     using difference_type        =   ptrdiff_t;
+
 private:
     iterator        m_data;
     iterator        m_begin;
@@ -23,6 +24,7 @@ private:
     size_t          m_capacity;
     
 public:
+
     // 构造函数， 拷贝构造， 移动构造   
     vector():m_data(nullptr),m_begin(nullptr),m_end(nullptr),m_size(0),m_capacity(2) 
     {
@@ -128,23 +130,19 @@ public:
 class string
 {
 public:
-
     char* data;
     size_t length;
-    
     string() : length(0)
     {
         data = static_cast<char*>(::operator new (sizeof(char)));
         *data = '\0';
     }
-
     string(const char* str) : length(strlen(str))
     {
         data = static_cast<char*>(::operator new ((strlen(str)+1)*sizeof(char)));
         memcpy(data,str,strlen(str));
         data[strlen(str)] = '\0';
     }
-
     string(const string& rhs) 
     {
         data = static_cast<char*>(::operator new ((rhs.length + 1) * sizeof(char)));
@@ -152,7 +150,6 @@ public:
         data[rhs.length] = '\0';
         this->length = rhs.length;
     }
-
     string(string&& rhs) 
     {
         this->data       = rhs.data;
@@ -160,19 +157,14 @@ public:
         rhs.data         = nullptr;
         rhs.length       = 0;   
     }
-
     ~string()
     {
         ::operator delete(data);
     }
-
     const char* c_str() const
     {
         return this->data;
     }
-
-
-    
 };
 int main()
 {
