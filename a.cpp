@@ -45,4 +45,5 @@ int main ()
    pb->qwe(0);
    delete pa;
    delete pb;
+   Base b;
 }

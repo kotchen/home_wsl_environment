@@ -120,7 +120,7 @@ public:
             m_end   = m_data + m_size;
         }
     }
-
+    iterator begin()          {return m_begin;}
     iterator begin()    const {return m_begin;}
 
     iterator end()      const {return m_end;}

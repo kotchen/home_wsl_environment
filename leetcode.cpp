@@ -12,37 +12,32 @@ struct ListNode {
 
 class Solution {
 public:
-    ListNode* reverseKGroup(ListNode* head, int k) {
+    ListNode* rotateRight(ListNode* head, int k) {
         std::vector<ListNode*> vec;
         while (head!=nullptr)
         {
             vec.push_back(head);
-            head = head -> next;
+            head = head->next;
         }
-        if (k==1) return vec[0];
-        for (int i = 0; i+k<=vec.size(); i=i+k)
-            reverse(vec, i, i+k-1, k);
-        return vec[k-1];
+
+        if (vec.size()==0) return nullptr;
+
+        int x = k % vec.size();
+
+        return reverse(vec, x);
+
     }
 
-    void reverse(const std::vector<ListNode*>& vec, int x, int y, int k)
+    ListNode* reverse(std::vector<ListNode*>& vec, int x)
     {
-        if(x==0)
+        if (x == 0) return vec[0];
+        else
         {
-            for (int i=x+1;i<=y-1;i++)
-                vec[i]->next = vec[i-1];
-            if (vec[y]->next!=nullptr) vec[x]->next = vec[y]->next;
-            else vec[x]->next = nullptr;
-            vec[y]->next = vec[y-1];
-        }
-        else 
-        {
-            vec[x-k]->next = vec[y];
-            for (int i=x+1;i<=y-1;i++)
-                vec[i]->next = vec[i-1];
-            if (vec[y]->next!=nullptr) vec[x]->next = vec[y]->next;
-            else vec[x]->next = nullptr;
-            vec[y]->next = vec[y-1];
+            ListNode* new_head = vec[vec.size()-x];
+            ListNode* new_end  = vec[vec.size()-x-1];
+            new_end->next = nullptr;
+            (*vec.rbegin())->next = vec[0];
+            return new_head;
         }
     }
 };
@@ -60,13 +55,13 @@ int main()
     // node3.next = &node4;
     // node4.next = &node5;
 
-    Solution s;
-    auto l = s.reverseKGroup(&node1,2);
-    while(l!=nullptr) 
-    {
-        std::cout << l->val << ' ';
-        l = l->next;
-    }
+    // Solution s;
+    // auto l = s.reverseKGroup(&node1,2);
+    // while(l!=nullptr) 
+    // {
+    //     std::cout << l->val << ' ';
+    //     l = l->next;
+    // }
 
 
 }
