@@ -4,6 +4,7 @@
 template<typename ValueT>
 class vector
 {
+
 public:
     using value_type             =   ValueT;
     using reference              =   ValueT&;
@@ -14,6 +15,7 @@ public:
     using const_iterator         =   const ValueT*;
     using size_type              =   size_t;
     using difference_type        =   ptrdiff_t;
+
 private:
     iterator        m_data;
     iterator        m_begin;
@@ -22,6 +24,7 @@ private:
     size_t          m_capacity;
     
 public:
+
     // 构造函数， 拷贝构造， 移动构造   
     vector():m_data(nullptr),m_begin(nullptr),m_end(nullptr),m_size(0),m_capacity(2) 
     {
@@ -33,7 +36,6 @@ public:
     vector(const vector& v):m_size(v.m_size), m_capacity(v.m_capacity)
     {
         m_data = static_cast<ValueT*>(::operator new (m_capacity*sizeof(ValueT)));
-    
         m_begin = m_data;
         m_end   = m_data;
         for (size_t i = 0; i < m_size; i++)
@@ -50,7 +52,6 @@ public:
         m_end = rhs.m_end;
         m_size = rhs.m_size;
         m_capacity = rhs.m_capacity;
-
         rhs.m_data = nullptr;
         rhs.m_begin = nullptr;
         rhs.m_end = nullptr;
@@ -86,7 +87,6 @@ public:
             m_capacity = m_capacity * 2;
             iterator new_area = static_cast<ValueT*> (::operator new(m_capacity*sizeof(ValueT))); 
             size_t new_size = 0;
-
             try
             {
                 for (size_t i = 0; i < m_size; i++)
@@ -105,13 +105,10 @@ public:
                 ::operator delete(new_area);
                 throw;
             }
-
             // for (size_t i = 0; i < m_size; i++)
             // {
             //     m_data[i].~ValueT();
             // }
-
-
             ::operator delete(m_data);
             m_data  = new_area;
             m_size  = new_size;
@@ -133,23 +130,19 @@ public:
 class string
 {
 public:
-
     char* data;
     size_t length;
-    
     string() : length(0)
     {
         data = static_cast<char*>(::operator new (sizeof(char)));
         *data = '\0';
     }
-
     string(const char* str) : length(strlen(str))
     {
         data = static_cast<char*>(::operator new ((strlen(str)+1)*sizeof(char)));
         memcpy(data,str,strlen(str));
         data[strlen(str)] = '\0';
     }
-
     string(const string& rhs) 
     {
         data = static_cast<char*>(::operator new ((rhs.length + 1) * sizeof(char)));
@@ -157,7 +150,6 @@ public:
         data[rhs.length] = '\0';
         this->length = rhs.length;
     }
-
     string(string&& rhs) 
     {
         this->data       = rhs.data;
@@ -165,56 +157,17 @@ public:
         rhs.data         = nullptr;
         rhs.length       = 0;   
     }
-
     ~string()
     {
         ::operator delete(data);
     }
-
     const char* c_str() const
     {
         return this->data;
     }
-
-
-    
 };
 int main()
 {
-    // vector<std::string> vec;
-    // vec.push_back("hello");
-    // auto s = new std::string("hello");
    
-    // vec.push_back(*s);
-    // vec.push_back("world");
-    // std::vector<std::string> vec;
-    // vec.emplace_back("hello", 3);
-    // delete s;
-    // for (auto& i : vec)
-    // {
-    //     std::cout << i << std::endl;
-    // }
-    string s("hello");
-    string s2("hello2");
-    vector<string> vec;
-    vec.push_back(s);
-    vec.push_back(s2);
-    string s3("qwe");
-    vec.push_back(s3);
-    for (string& i : vec)
-    {
-        std::cout << i.c_str() << std::endl;
-    }
-    // vector<std::string> vec_copy(std::move(vec));
-    // for (auto& i : vec_copy)
-    // {
-    //     std::cout << i << std::endl;
-    // }
-
-
-    // vector<string> vec;
-    // string string1;
-    // vec.push_back(string1);
-    // vec.push_back(string());
 
 }
