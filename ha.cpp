@@ -195,12 +195,12 @@ int main()
     //     std::cout << i << std::endl;
     // }
     string s("hello");
-    string s2("hello2");
+    //string s2("hello2");
     vector<string> vec;
     vec.push_back(s);
-    vec.push_back(s2);
-    string s3("qwe");
-    vec.push_back(s3);
+    //vec.push_back(s2);
+    //string s3("qwe");
+    vec.push_back(string("qwe"));
     for (string& i : vec)
     {
         std::cout << i.c_str() << std::endl;
