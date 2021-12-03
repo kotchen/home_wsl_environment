@@ -1,4 +1,2 @@
-*.out
-*.exe
-*_test
 *.vscode
+build*
