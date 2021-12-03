@@ -18,7 +18,6 @@ public:
 
 };
 
-
 class Derived : Base
 {
 public:
