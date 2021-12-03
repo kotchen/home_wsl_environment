@@ -1,4 +1,6 @@
-﻿struct tree_node
+﻿#ifndef __tree_node__
+#define __tree_node__
+struct tree_node
 {
     int val;
     tree_node* left;
@@ -7,3 +9,4 @@
     tree_node(int value): val(value), left(nullptr), right(nullptr){}
     tree_node(int value, tree_node* _left, tree_node* _right):val(value),left(_left), right(_right){}
 };
+#endif

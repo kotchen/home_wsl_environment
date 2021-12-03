@@ -1,8 +1,11 @@
+﻿#ifndef __kotchen_smart_pointer__
+#define __kotchen_smart_pointer__
 #include <iostream>
 #include <memory>
-
+namespace kotchen
+{
 template<typename T>
-class share_ptr
+class shared_ptr
 {
 public:
     int* counter;
@@ -12,21 +15,21 @@ public:
     // ptr = shared_ptr(e);
     // ptr = shared_ptr();
 
-    share_ptr(T* resourse = nullptr)
+    shared_ptr(T* resourse = nullptr)
     {
         data = resourse;
         counter = new int(1);
         weak_ref = new int(0);
     }
 
-    share_ptr(share_ptr& rhs)
+    shared_ptr(shared_ptr& rhs)
     {
         counter = rhs.counter;
         data = rhs.data;
         ++*counter;
     }
 
-    share_ptr& operator= (share_ptr& rhs)
+    shared_ptr& operator= (shared_ptr& rhs)
     {
         --*counter;
         if (*counter==0)
@@ -41,7 +44,7 @@ public:
         return *this;
     }
 
-    ~share_ptr()
+    ~shared_ptr()
     {
         --*counter;
         if (( *counter ) == 0)
@@ -64,12 +67,12 @@ public:
     {
     }
     
-    weak_ptr(share_ptr<T> p)
+    weak_ptr(shared_ptr<T> p)
     {
         data = p.data;
     }
 
-    weak_ptr& operator= (share_ptr<T> p)
+    weak_ptr& operator= (shared_ptr<T> p)
     {
         data = p.data;
         *(p.weak_ref)++;
@@ -106,7 +109,7 @@ class Son;
 
 class Father {
 public:
-    share_ptr<Son> son_;
+    shared_ptr<Son> son_;
     Father() {
         std::cout << __FUNCTION__ << std::endl;
     }
@@ -125,31 +128,35 @@ public:
         std::cout << __FUNCTION__ << std::endl;
     }
 };
+};
 
 
 
-int main(int argc, char const *argv[])
-{
-    // auto son = std::make_shared<Son>();
-    // auto father = std::make_shared<Father>();
-    // son->father_ = father;
-    // father->son_ = son;
-    // std::cout << "son: " << son.use_count() << std::endl;
-    // std::cout << "father: " << father.use_count() << std::endl;
 
-    // Son* son = new Son();
-    // Father* father = new Father();
+#endif
 
-    // share_ptr<Son> s(son);
-    // share_ptr<Father> f(father); 
-    // s.data->father_ = f;
-    // f.data->son_ = s; 
-    auto son_ = new Son();  // 创建一个Son对象，返回指向Son对象的指针son_
-    auto father_ = new Father();  // 创建一个Father对象，返回指向Father对象的指针father_
-    share_ptr<Son> son(son_);  // 调用SharedPtr构造函数：son.counter=1, son.weakref=0
-    share_ptr<Father> father(father_);  // 调用SharedPtr构造函数：father.counter=1, father.weakref=0
-    son.data->father_ = father;  // 调用WeakPtr赋值函数：father.counter=1, father.weakref=1
-    father.data->son_ = son;  // 调用SharedPtr赋值函数：son.counter=2, son.weakref=0
+// int main(int argc, char const *argv[])
+// {
+//     // auto son = std::make_shared<Son>();
+//     // auto father = std::make_shared<Father>();
+//     // son->father_ = father;
+//     // father->son_ = son;
+//     // std::cout << "son: " << son.use_count() << std::endl;
+//     // std::cout << "father: " << father.use_count() << std::endl;
 
-    return 0;
-}
+//     // Son* son = new Son();
+//     // Father* father = new Father();
+
+//     // share_ptr<Son> s(son);
+//     // share_ptr<Father> f(father); 
+//     // s.data->father_ = f;
+//     // f.data->son_ = s; 
+//     auto son_ = new Son();  // 创建一个Son对象，返回指向Son对象的指针son_
+//     auto father_ = new Father();  // 创建一个Father对象，返回指向Father对象的指针father_
+//     share_ptr<Son> son(son_);  // 调用SharedPtr构造函数：son.counter=1, son.weakref=0
+//     share_ptr<Father> father(father_);  // 调用SharedPtr构造函数：father.counter=1, father.weakref=0
+//     son.data->father_ = father;  // 调用WeakPtr赋值函数：father.counter=1, father.weakref=1
+//     father.data->son_ = son;  // 调用SharedPtr赋值函数：son.counter=2, son.weakref=0
+
+//     return 0;
+// }

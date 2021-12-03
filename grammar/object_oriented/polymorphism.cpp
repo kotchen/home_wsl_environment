@@ -11,6 +11,11 @@ public:
     virtual void speak() = 0;
 };
 
+void Ispeaker::speak()
+{
+
+}
+
 class Dog : Ispeaker
 {
 private:
@@ -77,7 +82,5 @@ int main()
     Dog* p_dog = (Dog*)speaker_3;
     p1->Ispeaker::speak();
 
-    auto x = malloc(1);
-    delete x;
     
 }
