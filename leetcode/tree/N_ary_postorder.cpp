@@ -22,6 +22,24 @@ public:
         return v;
     }
 };
+
+class Solution {
+public:
+    std::vector<int> v;
+    void _postorder(Node* root)
+    {
+        if (!root) return ;
+        for (auto i : root->children)
+        {
+            _postorder(i);
+        }
+        v.emplace_back(root->val);
+    }
+    std::vector<int> postorder(Node* root) {
+        _postorder(root);
+        return v;
+    }
+};
 int main(int argc, char const *argv[])
 {
     Node node(1);
