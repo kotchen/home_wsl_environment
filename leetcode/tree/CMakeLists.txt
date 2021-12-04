@@ -5,4 +5,9 @@ project(preorder_traversal)
 add_executable(${PROJECT_NAME} preorder_traversal.cpp)
 
 project(postorder_traversal)
-add_executable(${PROJECT_NAME} postorder_travesal.cpp)
+add_executable(${PROJECT_NAME} postorder_traversal.cpp)
+
+
+
+project(N_ary_tree_lever_traversal)
+add_executable(${PROJECT_NAME} N_ary_tree_level_traversal.cpp)
