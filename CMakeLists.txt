@@ -9,7 +9,7 @@ add_subdirectory(grammar)
 add_subdirectory(leetcode)
 
 
-project(test)
-add_executable(test test.cpp)
+# project(test)
+# add_executable(test test.cpp)
 
 

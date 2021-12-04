@@ -1,12 +1,12 @@
-﻿#ifndef __tree_node__
-#define __tree_node__
-struct tree_node
+﻿#ifndef __TreeNode__
+#define __TreeNode__
+struct TreeNode
 {
     int val;
-    tree_node* left;
-    tree_node* right;
-    tree_node():val(0), left(nullptr), right(nullptr){}
-    tree_node(int value): val(value), left(nullptr), right(nullptr){}
-    tree_node(int value, tree_node* _left, tree_node* _right):val(value),left(_left), right(_right){}
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode():val(0), left(nullptr), right(nullptr){}
+    TreeNode(int value): val(value), left(nullptr), right(nullptr){}
+    TreeNode(int value, TreeNode* _left, TreeNode* _right):val(value),left(_left), right(_right){}
 };
 #endif
