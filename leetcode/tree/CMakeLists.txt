@@ -23,3 +23,6 @@ add_executable(${PROJECT_NAME} vertical_order.cpp)
 
 project(deepest_leaves_sum)
 add_executable(${PROJECT_NAME} deepest_leaves_sum.cpp)
+
+project(same_tree)
+add_executable(${PROJECT_NAME} same_tree.cpp)
