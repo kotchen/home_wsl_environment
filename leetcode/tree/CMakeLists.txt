@@ -32,3 +32,10 @@ add_executable(${PROJECT_NAME} symmetic_tree.cpp)
 
 project(tree_max_depth)
 add_executable(${PROJECT_NAME} tree_max_depth.cpp)
+
+
+project(balanced_binary_tree)
+add_executable(${PROJECT_NAME} balanced_binary_tree.cpp)
+
+project(subtree_of_another)
+add_executable(${PROJECT_NAME} subtree_of_another.cpp)
