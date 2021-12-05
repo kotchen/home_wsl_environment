@@ -29,3 +29,6 @@ add_executable(${PROJECT_NAME} same_tree.cpp)
 
 project(symmetic_tree)
 add_executable(${PROJECT_NAME} symmetic_tree.cpp)
+
+project(tree_max_depth)
+add_executable(${PROJECT_NAME} tree_max_depth.cpp)
