@@ -17,3 +17,6 @@ add_executable(${PROJECT_NAME} N_ary_preorder.cpp)
 
 project(N_ary_postorder)
 add_executable(${PROJECT_NAME} N_ary_postorder.cpp)
+
+project(vertical_order)
+add_executable(${PROJECT_NAME} vertical_order.cpp)
