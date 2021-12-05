@@ -39,3 +39,6 @@ add_executable(${PROJECT_NAME} balanced_binary_tree.cpp)
 
 project(subtree_of_another)
 add_executable(${PROJECT_NAME} subtree_of_another.cpp)
+
+project(uni_valued_tree)
+add_executable(${PROJECT_NAME} uni_valued_tree.cpp)
