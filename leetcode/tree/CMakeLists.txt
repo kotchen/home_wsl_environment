@@ -26,3 +26,6 @@ add_executable(${PROJECT_NAME} deepest_leaves_sum.cpp)
 
 project(same_tree)
 add_executable(${PROJECT_NAME} same_tree.cpp)
+
+project(symmetic_tree)
+add_executable(${PROJECT_NAME} symmetic_tree.cpp)
