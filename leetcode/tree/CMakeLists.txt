@@ -20,3 +20,6 @@ add_executable(${PROJECT_NAME} N_ary_postorder.cpp)
 
 project(vertical_order)
 add_executable(${PROJECT_NAME} vertical_order.cpp)
+
+project(deepest_leaves_sum)
+add_executable(${PROJECT_NAME} deepest_leaves_sum.cpp)
