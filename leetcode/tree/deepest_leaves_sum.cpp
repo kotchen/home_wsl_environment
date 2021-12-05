@@ -26,5 +26,6 @@ int main(int argc, char const *argv[])
 {
     /* code */
     TreeNode node;
+    node.val = 1;
     return 0;
 }
