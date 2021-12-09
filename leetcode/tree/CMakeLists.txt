@@ -42,3 +42,7 @@ add_executable(${PROJECT_NAME} subtree_of_another.cpp)
 
 project(uni_valued_tree)
 add_executable(${PROJECT_NAME} uni_valued_tree.cpp)
+
+
+project(rebuild_tree)
+add_executable(${PROJECT_NAME} rebuild_tree.cpp)
