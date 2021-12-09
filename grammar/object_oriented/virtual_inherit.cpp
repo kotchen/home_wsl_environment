@@ -27,7 +27,7 @@ public:
 
 int main(int argc, char** argv)
 {
-    printf("%d\n", sizeof(C));
+    printf("%ld\n", sizeof(C));
 
     C c;
     c.a = 0xaaaaaaaa;
