@@ -46,3 +46,6 @@ add_executable(${PROJECT_NAME} uni_valued_tree.cpp)
 
 project(rebuild_tree)
 add_executable(${PROJECT_NAME} rebuild_tree.cpp)
+
+project(same_leaves)
+add_executable(${PROJECT_NAME} same_leaves.cpp)
