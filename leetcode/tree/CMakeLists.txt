@@ -49,3 +49,7 @@ add_executable(${PROJECT_NAME} rebuild_tree.cpp)
 
 project(same_leaves)
 add_executable(${PROJECT_NAME} same_leaves.cpp)
+
+project(binary_tree_prune)
+add_executable(${PROJECT_NAME} binary_tree_prune.cpp)
+
