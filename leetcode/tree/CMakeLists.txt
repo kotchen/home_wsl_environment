@@ -59,5 +59,9 @@ add_executable(${PROJECT_NAME} tree_delete_target.cpp)
 project(path_sum)
 add_executable(${PROJECT_NAME}  path_sum.cpp)
 
+project(path_sum_2)
+add_executable(${PROJECT_NAME}  path_sum_2.cpp)
+
+
 
 
