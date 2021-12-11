@@ -56,4 +56,8 @@ add_executable(${PROJECT_NAME} binary_tree_prune.cpp)
 project(tree_delete_target)
 add_executable(${PROJECT_NAME} tree_delete_target.cpp)
 
+project(path_sum)
+add_executable(${PROJECT_NAME}  path_sum.cpp)
+
+
 
