@@ -53,3 +53,7 @@ add_executable(${PROJECT_NAME} same_leaves.cpp)
 project(binary_tree_prune)
 add_executable(${PROJECT_NAME} binary_tree_prune.cpp)
 
+project(tree_delete_target)
+add_executable(${PROJECT_NAME} tree_delete_target.cpp)
+
+
