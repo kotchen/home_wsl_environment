@@ -25,7 +25,7 @@
 // };  慢的一，搞笑算法
 
 
-// map或者set 的使用
+// map 的使用
 // class Solution {
 // public:
 //     unordered_map<ListNode*, int> m;
