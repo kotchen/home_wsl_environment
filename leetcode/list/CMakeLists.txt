@@ -9,3 +9,6 @@ add_executable(${PROJECT_NAME}  swap_node_pair.cpp)
 
 project(list_cycle)
 add_executable(${PROJECT_NAME}  list_cycle.cpp)
+
+project(list_cycle_ii)
+add_executable(${PROJECT_NAME}  list_cycle_ii.cpp)
