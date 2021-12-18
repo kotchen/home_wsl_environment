@@ -12,3 +12,9 @@ add_executable(${PROJECT_NAME}  list_cycle.cpp)
 
 project(list_cycle_ii)
 add_executable(${PROJECT_NAME}  list_cycle_ii.cpp)
+
+project(merge_two_lists)
+add_executable(${PROJECT_NAME}  merge_two_lists.cpp)
+
+project(merge_k_lists)
+add_executable(${PROJECT_NAME}  merge_k_lists.cpp)
