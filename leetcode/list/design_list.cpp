@@ -11,6 +11,14 @@ class MyLinkedList {
 private:
     List_Node* head;
     size_t size;
+
+    List_Node* get_addr(int index)
+    {
+        auto temp = head->next;
+        while (index--)
+            temp = temp->next;
+        return temp;
+    }
 public:
     MyLinkedList() {
         head = new List_Node(-1);
@@ -29,14 +37,6 @@ public:
             return temp->val;
     }
 
-    List_Node* get_addr(int index)
-    {
-        auto temp = head->next;
-        while (index--)
-            temp = temp->next;
-        return temp;
-    }
-    
     void addAtHead(int val) {
         if (!head->next)
         {
