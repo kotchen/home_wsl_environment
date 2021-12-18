@@ -21,3 +21,8 @@ add_executable(${PROJECT_NAME}  merge_k_lists.cpp)
 
 project(merge_sort_list)
 add_executable(${PROJECT_NAME}  merge_sort_list.cpp)
+
+project(design_list)
+add_executable(${PROJECT_NAME}  design_list.cpp)
+
+
