@@ -18,3 +18,6 @@ add_executable(${PROJECT_NAME}  merge_two_lists.cpp)
 
 project(merge_k_lists)
 add_executable(${PROJECT_NAME}  merge_k_lists.cpp)
+
+project(insert_sort_list)
+add_executable(${PROJECT_NAME} insert_sort_list.cpp)
