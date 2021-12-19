@@ -2,3 +2,4 @@
 add_subdirectory(divide_conquer)
 add_subdirectory(str)
 add_subdirectory(list)
+add_subdirectory(graph)
