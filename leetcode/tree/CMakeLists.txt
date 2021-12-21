@@ -62,6 +62,11 @@ add_executable(${PROJECT_NAME}  path_sum.cpp)
 project(path_sum_2)
 add_executable(${PROJECT_NAME}  path_sum_2.cpp)
 
+project(common_ancestor)
+add_executable(${PROJECT_NAME}  common_ancestor.cpp)
 
+
+project(BST_common_ancestor)
+add_executable(${PROJECT_NAME}  BST_common_ancestor.cpp)
 
 
